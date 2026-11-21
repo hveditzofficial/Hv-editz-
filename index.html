@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HV Editz | Official Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    background: #090909;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffca00;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #ffca00;
+}
+
+.menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffca00;
+}
+
+/* HOME */
+
+.hero {
+    min-height: 90vh;
+    padding: 65px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle,#302000,#050505 70%);
+}
+
+/* PERFECT CIRCLE LOGO */
+
+.hero-logo {
+    width: 260px;
+    height: 260px;
+
+    display: block;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    clip-path: circle(50% at 50% 50%);
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 3px solid #ffca00;
+
+    box-shadow:
+        0 0 20px #ffbd00,
+        0 0 45px #ff4500;
+
+    margin: 0 auto 35px;
+}
+
+/* TITLE */
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg,#ffe000,#ff1744);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.tagline {
+    font-size: 19px;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 700px;
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+    padding: 16px 30px;
+    background: linear-gradient(90deg,#ffe000,#ff1744);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    color: #ffca00;
+    margin-bottom: 25px;
+}
+
+.description {
+    color: #bbb;
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #101010;
+}
+
+/* SERVICES */
+
+.services {
+    background: #050505;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #151515;
+    padding: 35px 20px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ffbd00;
+}
+
+.card h3 {
+    color: #ffca00;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #bbb;
+    line-height: 1.7;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+    background: #101010;
+}
+
+.portfolio-box {
+    margin-top: 35px;
+    padding: 35px;
+    background: #181818;
+    border-radius: 15px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #050505;
+}
+
+.contact p {
+    margin: 20px 0 30px;
+    color: #ccc;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    background: #20d66b;
+    color: white;
+    text-decoration: none;
+    padding: 16px 25px;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background: #101010;
+    padding: 35px 15px;
+    text-align: center;
+    color: #999;
+    line-height: 2;
+}
+
+footer h2 {
+    color: #ffbd00;
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+    header {
+        padding: 18px 20px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .hero-logo {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .tagline {
+        font-size: 14px;
+        letter-spacing: 4px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">HV EDITZ</div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <img src="hv-editz.png"
+         class="hero-logo"
+         alt="HV Editz Logo">
+
+    <h1>HV EDITZ</h1>
+
+    <div class="tagline">
+        DREAM • EDIT • CREATE
+    </div>
+
+    <p>
+        Welcome to HV Editz Official Website.
+        Explore creativity, photo editing,
+        video editing and visual storytelling.
+    </p>
+
+    <a href="#services" class="btn">
+        EXPLORE OUR WORK
+    </a>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="title">ABOUT HV EDITZ</h2>
+
+    <p class="description">
+        HV Editz is a creative editing brand
+        focused on photo editing, video editing
+        and digital creativity.
+
+        Our goal is to transform ordinary visuals
+        into creative experiences.
+    </p>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <h2 class="title">OUR SERVICES</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>PHOTO EDITING</h3>
+            <p>Creative photo editing and attractive visual designs.</p>
+        </div>
+
+        <div class="card">
+            <h3>VIDEO EDITING</h3>
+            <p>Creative video editing and cinematic storytelling.</p>
+        </div>
+
+        <div class="card">
+            <h3>GRAPHIC DESIGN</h3>
+            <p>Creative posters and digital branding designs.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+    <h2 class="title">OUR PORTFOLIO</h2>
+
+    <p class="description">
+        Creativity has no limits.
+        Welcome to the creative world of HV Editz.
+    </p>
+
+    <div class="portfolio-box">
+        <h3>PHOTO & VIDEO CREATIONS</h3>
+        <p class="description">
+            Our creative projects will be showcased here.
+        </p>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="title">CONTACT US</h2>
+
+    <p>
+        Interested in creative editing?
+        Connect with HV Editz.
+    </p>
+
+    <a href="https://www.instagram.com/"
+       class="btn"
+       target="_blank">
+       INSTAGRAM
+    </a>
+
+</section>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/91YOURNUMBER"
+   class="whatsapp"
+   target="_blank">
+   WhatsApp
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+    <h2>HV EDITZ</h2>
+    DREAM • EDIT • CREATE
+    <br>
+    © 2026 HV Editz. All Rights Reserved.
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navbar")
+    .classList.toggle("active");
+}
+</script>
+
+</body>
+  </html>
