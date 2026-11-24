@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HV Editz | Official Creative Studio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --gold: #ffca05;
+    --red: #ff303b;
+    --black: #050505;
+    --card: #111;
+    --white: #fff;
+    --gray: #aaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #080808;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-text {
+    color: var(--gold);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo-text span {
+    color: var(--red);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.menu {
+    display: none;
+    color: var(--gold);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* HOME */
+
+.hero {
+    min-height: 90vh;
+    padding: 75px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse, #241800, #050505 70%);
+}
+
+/* CIRCULAR PROFILE LOGO */
+
+.hero-logo {
+    width: 300px;
+    height: 300px;
+    max-width: 80vw;
+    max-height: 80vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 35px rgba(255,190,0,.35);
+    margin-bottom: 35px;
+    display: block;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 8px;
+}
+
+.tagline {
+    color: var(--red);
+    font-size: clamp(16px, 3vw, 28px);
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin: 20px 0;
+}
+
+.description {
+    max-width: 750px;
+    color: #bbb;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 16px 35px;
+    border-radius: 8px;
+    background: linear-gradient(100deg, #ffca05, #ff303b);
+    color: #050505;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #ff9c00;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 85px 8%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.heading small {
+    color: var(--red);
+    letter-spacing: 4px;
+}
+
+.heading h2 {
+    color: var(--gold);
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.heading p {
+    color: var(--gray);
+    margin-top: 12px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #101010;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: #bbb;
+    line-height: 2;
+}
+
+.about-content span {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* SERVICES */
+
+.services {
+    background: #050505;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    padding: 35px 25px;
+    background: linear-gradient(145deg, #191919, #0a0a0a);
+    border: 1px solid #292929;
+    border-radius: 15px;
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+    background: #101010;
+}
+
+.work {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #252525, #090909);
+    border: 1px solid #333;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.work:hover {
+    border-color: var(--gold);
+    transform: scale(1.03);
+}
+
+.work span {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.work h3 {
+    color: var(--gold);
+}
+
+.work p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: radial-gradient(ellipse, #211500, #050505 75%);
+}
+
+.contact p {
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.contact-links a {
+    padding: 14px 28px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.contact-links a:hover {
+    background: var(--gold);
+    color: black;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #050505;
+    border-top: 1px solid #252525;
+}
+
+footer h2 {
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+footer p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 999;
+    background: #20c968;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    header {
+        padding: 18px 6%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: #101010;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        gap: 22px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero-logo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero h1 {
+        letter-spacing: 5px;
+    }
+
+    .tagline {
+        letter-spacing: 3px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heading h2 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#home" class="logo-text">HV <span>EDITZ</span></a>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <img src="hv-editz.png"
+         alt="HV Editz Logo"
+         class="hero-logo">
+
+    <h1>HV EDITZ</h1>
+
+    <div class="tagline">
+        DREAM • EDIT • CREATE
+    </div>
+
+    <p class="description">
+        Welcome to HV Editz Official Website.
+        We transform creative ideas into cinematic visuals.
+        Explore our world of photo editing, video editing
+        and digital creativity.
+    </p>
+
+    <a href="#services" class="button">
+        EXPLORE OUR SERVICES
+    </a>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="heading">
+        <small>WHO WE ARE</small>
+        <h2>ABOUT HV EDITZ</h2>
+    </div>
+
+    <div class="about-content">
+        <p>
+            Welcome to <span>HV Editz</span>,
+            a creative editing brand built around imagination,
+            creativity and visual storytelling.
+        </p>
+
+        <p>
+            Our goal is to transform ordinary visuals
+            into memorable creative experiences through
+            photo editing, video editing and graphic design.
+        </p>
+
+        <p><span>DREAM • EDIT • CREATE</span></p>
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="heading">
+        <small>WHAT WE DO</small>
+        <h2>OUR SERVICES</h2>
+        <p>Creative solutions for your visual ideas.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">📸</div>
+            <h3>PHOTO EDITING</h3>
+            <p>Creative photo edits, colour grading and attractive visual compositions.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h3>VIDEO EDITING</h3>
+            <p>Cinematic video edits, transitions, reels and visual storytelling.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>GRAPHIC DESIGN</h3>
+            <p>Creative posters, thumbnails, branding and digital designs.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="heading">
+        <small>OUR CREATIVE WORLD</small>
+        <h2>OUR PORTFOLIO</h2>
+        <p>Showcasing our creative editing projects.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="work">
+            <span>📷</span>
+            <h3>PHOTO CREATIONS</h3>
+            <p>Creative photo editing</p>
+        </div>
+
+        <div class="work">
+            <span>🎥</span>
+            <h3>VIDEO CREATIONS</h3>
+            <p>Cinematic video editing</p>
+        </div>
+
+        <div class="work">
+            <span>✨</span>
+            <h3>DESIGN CREATIONS</h3>
+            <p>Graphic design projects</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="heading">
+        <small>LET'S CONNECT</small>
+        <h2>CONTACT HV EDITZ</h2>
+    </div>
+
+    <p>Have a creative idea or project? Let's connect.</p>
+
+    <div class="contact-links">
+
+        <a href="https://www.instagram.com/" target="_blank">
+            INSTAGRAM
+        </a>
+
+        <a href="https://wa.me/91YOURNUMBER" target="_blank">
+            WHATSAPP
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <h2>HV EDITZ</h2>
+    <p>DREAM • EDIT • CREATE</p>
+    <p>Creative Photo & Video Editing Studio</p>
+    <p>© 2026 HV Editz. All Rights Reserved.</p>
+</footer>
+
+<a class="whatsapp"
+   href="https://wa.me/91YOURNUMBER"
+   target="_blank">
+   WhatsApp
+</a>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+function closeMenu() {
+    document.getElementById("navbar").classList.remove("active");
+}
+</script>
+
+</body>
+  </html>
